@@ -17,8 +17,6 @@ To access this project on your local files, you can clone it using these steps
 
 ## Technologies Used
 - Python
-- HTML
-- CSS
 ### Live Site
 View [live]()
 ### License
