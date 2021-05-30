@@ -62,7 +62,7 @@ class Credential:
     return cls.credential_list
 
   @classmethod
-  def copy_email(cls,number):
+  def copy_pwd(cls,number):
     credential_found = Credential.find_by_number(number)
     pyperclip.copy(credential_found.password)
 

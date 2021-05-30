@@ -69,11 +69,11 @@ def del_credential(credential):
   '''
   credential.delete_credential()
 
-def copy_email(credential,number):
+def copy_pwd(credential,number):
   '''
   Function to delete a credential
   '''
-  credential.copy_email(number)
+  credential.copy_pwd(number)
 
 def find_credential(number):
   '''
@@ -202,6 +202,21 @@ def main():
         print("You dont seem to have any users saved yet")
         print('\n')
 
+    #display credentials
+    elif short_code == 'display-c':
+
+      if display_credentials():
+        print("Here is a list of all your credentials")
+        print('\n')
+
+        for credential in display_credentials():
+          print(f"Username: {credential.credential_name}, password:  {credential.password} .....{credential.number}")
+
+        print('\n')
+      else:
+        print("You dont seem to have any users saved yet")
+        print('\n')
+
     elif short_code == 'find-u':
       print("Enter the number you want to search for")
 
@@ -232,7 +247,7 @@ def main():
         print("That user does not exist")
 
     #delete password
-    elif short_code == 'delete-pwd':
+    elif short_code == 'delete-c':
 
       print("Enter the number you want to delete password from")
 
@@ -270,8 +285,8 @@ def main():
       if check_existing_credential(find_number):
         pwd_credential = find_credential(find_number)
         print(f"Password: {pwd_credential.password}  will be copied")
-        email_user = copy_email(email_user,find_number)
-        print("Email address copied successfully")
+        pwd_credential = copy_pwd(pwd_credential,find_number)
+        print("Password copied successfully")
 
       else:
         print("That user does not exist")
