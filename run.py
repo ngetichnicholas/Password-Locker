@@ -79,7 +79,7 @@ def find_credential(number):
   '''
   Function that finds a credential by number and returns the credential
   '''
-  return Credential.find_by_number(number)
+  return Credential.find_credential_by_number(number)
 
 def check_existing_credential(number):
   '''
@@ -133,7 +133,6 @@ def main():
       print(f"New Credentials: username - {u_name} , password - {u_password} created")
       print("-"*10)
       print("Enter command login -to login to your account")
-
 
     #creating account with auto generated password
     if short_code == 'create-auto':
@@ -217,6 +216,7 @@ def main():
         print("You dont seem to have any users saved yet")
         print('\n')
 
+    #find user
     elif short_code == 'find-u':
       print("Enter the number you want to search for")
 
@@ -231,7 +231,20 @@ def main():
       else:
         print("That user does not exist")
 
+    #find credential
+    elif short_code == 'find-c':
+      print("Enter the number you want to search credential from")
 
+      search_number = input()
+      if check_existing_credential(search_number):
+        search_credential = find_credential(search_number)
+        print(f"Username: {search_credential.credential_name}, Password: {search_credential.password}, Phone: {search_credential.number}")
+        print('-' * 20)
+
+      else:
+        print("That credential does not exist")
+
+    #delete user
     elif short_code == 'delete-u':
 
       print("Enter the number you want to delete")
@@ -241,12 +254,12 @@ def main():
         dl_user = find_user(delete_number)
         print(f"{dl_user.first_name} {dl_user.last_name} will be deleted")
         dl_user = del_user(dl_user)
-        print("user deleted successfully")
+        print("User deleted successfully")
 
       else:
         print("That user does not exist")
 
-    #delete password
+    #delete credential
     elif short_code == 'delete-c':
 
       print("Enter the number you want to delete password from")
@@ -259,10 +272,10 @@ def main():
         print("Credential deleted successfully")
 
       else:
-        print("That user does not exist")
+        print("That credential does not exist")
 
     #copy email
-    elif short_code == 'copy-email':
+    elif short_code == 'copy-e':
 
       print("Enter the number you want to copy email from")
 

@@ -8,7 +8,7 @@ class Credential:
   def __init__(self, credential_name, password,number):
     self.credential_name = credential_name
     self.password = password
-    self.phone_number = number
+    self.number = number
 
 
   def save_credential(self):
@@ -26,7 +26,7 @@ class Credential:
     Credential.credential_list.remove(self)
 
   @classmethod
-  def find_by_number(cls,number):
+  def find_credential_by_number(cls,number):
     '''
     Method that takes in a number and returns a credential that matches that number.
 
@@ -36,7 +36,7 @@ class Credential:
       credential  that matches the number.
     '''
     for credential in cls.credential_list:
-      if credential.phone_number == number:
+      if credential.number == number:
         return credential
 
   @classmethod
@@ -49,7 +49,7 @@ class Credential:
         Boolean: True or false depending if the credential exists
     '''
     for credential in cls.credential_list:
-      if credential.phone_number == number:
+      if credential.number == number:
         return True
 
     return False
@@ -63,7 +63,7 @@ class Credential:
 
   @classmethod
   def copy_pwd(cls,number):
-    credential_found = Credential.find_by_number(number)
+    credential_found = Credential.find_credential_by_number(number)
     pyperclip.copy(credential_found.password)
 
 
