@@ -20,6 +20,13 @@ class User:
     '''
 
     User.user_list.append(self)
+
+  def delete_user(self):
+    '''
+    delete_user method deletes a saved user from the user_list
+    '''
+
+    User.user_list.remove(self)
 # while True:
 #   password = input("What is the password?")
 #   if password == "nick1111":
