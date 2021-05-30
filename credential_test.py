@@ -69,7 +69,7 @@ class TestCredential(unittest.TestCase):
 
     found_credential = Credential.find_credential_by_number("0714042437")
 
-    self.assertEqual(found_credential.credential_name,test_credential.number)
+    self.assertEqual(found_credential.credential_name,test_credential.credential_name)
 
   def test_credential_exists(self):
     '''
@@ -98,7 +98,7 @@ class TestCredential(unittest.TestCase):
         self.new_credential.save_credential()
         Credential.copy_pwd("0725470732")
 
-        self.assertEqual(self.new_credential.email,pyperclip.paste())
+        self.assertEqual(self.new_credential.password,pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main()
