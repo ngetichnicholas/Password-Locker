@@ -52,7 +52,7 @@ def main():
   print('\n')
 
   while True:
-    print("Use these short codes : \n cc - create a new user \n dc - display users \n fc -find a user \n dl -bto delete user \n cp - to copy email address \n ex -exit the user list ")
+    print("Use these short codes : \n cc - create a new user \n dc - display users \n fc -find a user \n dl - to delete user \n cp - to copy email address \n ex -exit the user list ")
 
     short_code = input().lower()
 
@@ -66,6 +66,9 @@ def main():
       print("Last name ...")
       l_name = input()
 
+      print("Username ...")
+      u_name = input()
+
       print("Phone number ...")
       p_number = input()
 
@@ -73,7 +76,7 @@ def main():
       e_address = input()
 
 
-      save_user(create_user(f_name,l_name,p_number,e_address)) # create and save new user.
+      save_user(create_user(f_name,l_name,u_name,p_number,e_address)) # create and save new user.
       print ('\n')
       print(f"New user {f_name} {l_name} created")
       print ('\n')
