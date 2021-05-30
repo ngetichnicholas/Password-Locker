@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 import random
-from account import User
-from logins import Credential
+from user import User
+from credential import Credential
 
 #functions for user_account
 def create_user(fname,lname,phone,email):
@@ -183,8 +183,8 @@ def main():
         print("Try again")
       else:
         print("ACCESS GRANTED!!")
-        print(f"Welcome {u_name} to your account")
-        print("Use the following command to do some action with your account: \n display-u -command to display user details \n find-u - command to search for your user \n delete-u - command to delete user \n copy-e - command to copy email address \n display-c - command to display credentials \n find-c - command to search credentials \n delete-c - command to delete credentials \n copy-pwd -command to copy password ")
+        print(f"Welcome {f_name} {l_name} to your account")
+        print("Use the following command to do some action with your account: \n create - command to create new account with user choosing own password  \n create-auto - command to create account with auto generated password \n display-u -command to display user details \n find-u - command to search for your user \n delete-u - command to delete user \n copy-e - command to copy email address \n display-c - command to display credentials \n find-c - command to search credentials \n delete-c - command to delete credentials \n copy-pwd -command to copy password ")
 
     elif short_code == 'display-u':
 
@@ -305,7 +305,7 @@ def main():
         print("That user does not exist")
 
 
-    elif short_code == "ex":
+    elif short_code == "exit":
       print("Bye .......")
       break
     else:
