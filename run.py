@@ -1,12 +1,13 @@
 #!/usr/bin/env python3.6
 import random
 from account import User
+from logins import Credential
 
-def create_user(fname,lname,uname,phone,email):
+def create_user(fname,lname,phone,email):
   '''
   Function to create a new user
   '''
-  new_user = User(fname,lname,uname,phone,email)
+  new_user = User(fname,lname,phone,email)
   return new_user
 
 def save_user(user):
@@ -45,9 +46,56 @@ def display_users():
   '''
   return User.display_users()
 
+
+
+
+def create_credential(uname,password,phone):
+  '''
+  Function to create a new credential
+  '''
+  new_credential = Credential(uname,password,phone)
+  return new_credential
+
+def save_credential(credential):
+  '''
+  Function to save credential
+  '''
+  credential.save_credential()
+
+def del_credential(credential):
+  '''
+  Function to delete a credential
+  '''
+  credential.delete_credential()
+
+def copy_email(credential,number):
+  '''
+  Function to delete a credential
+  '''
+  credential.copy_email(number)
+
+def find_credential(number):
+  '''
+  Function that finds a credential by number and returns the credential
+  '''
+  return Credential.find_by_number(number)
+
+def check_existing_credential(number):
+  '''
+  Function that check if credential exists with number and returns a Boolean
+  '''
+  return Credential.credential_exist(number)
+
+def display_credentials():
+  '''
+  Function that returns all the saved credentials
+  '''
+  return Credential.display_credentials()
+
+
 def main():
   print("Hello, Welcome to your password locker account \n")
-  print("Enter command to chose what to do: \n login - command to login \n create - command to create account \n exit - command to exit the program \n")
+  print("Enter command to chose what to do: \n create - command to create new account with user choosing own password  \n create-auto - command to create account with auto generated password \n login - command to login to your account \n exit - command to exit the program \n")
   user_name = input()
 
   print(f"Hello {user_name}. what would you like to do?")
@@ -80,9 +128,14 @@ def main():
       e_address = input()
 
 
-      save_user(create_user(f_name,l_name,u_name,p_number,e_address)) # create and save new user.
+      save_user(create_user(f_name,l_name,p_number,e_address)) # create and save new user.
       print ('\n')
       print(f"New user {f_name} {l_name} created")
+      print ('\n')
+
+      save_credential(create_credential(u_name,u_password,p_number)) # create and save new user.
+      print ('\n')
+      print(f"New Credentials: username - {u_name} , password - {u_password} created")
       print ('\n')
 
     elif short_code == 'dc':
