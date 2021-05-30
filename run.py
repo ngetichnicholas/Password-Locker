@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
-from password import User
+import random
+from account import User
 
 def create_user(fname,lname,uname,phone,email):
   '''
@@ -45,7 +46,8 @@ def display_users():
   return User.display_users()
 
 def main():
-  print("Hello Welcome to your user list. What is your name?")
+  print("Hello, Welcome to your password locker account \n")
+  print("Enter command to chose what to do: \n login - command to login \n create - command to create account \n exit - command to exit the program \n")
   user_name = input()
 
   print(f"Hello {user_name}. what would you like to do?")
@@ -56,8 +58,8 @@ def main():
 
     short_code = input().lower()
 
-    if short_code == 'cc':
-      print("New user")
+    if short_code == 'create':
+      print("New user Account")
       print("-"*10)
 
       print ("First name ....")
@@ -68,6 +70,8 @@ def main():
 
       print("Username ...")
       u_name = input()
+      print("Password ...")
+      u_password = input()
 
       print("Phone number ...")
       p_number = input()
