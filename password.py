@@ -1,7 +1,12 @@
-while True:
-  password = input("What is the password?")
-  if password == "nick1111":
-    print("ACCESS GRANTED")
-    break
-  else:
-    print("ACCESS DENIED")
+import pyperclip
+class User:
+  '''
+  Class that creates new intances of users
+  '''
+# while True:
+#   password = input("What is the password?")
+#   if password == "nick1111":
+#     print("ACCESS GRANTED")
+#     break
+#   else:
+#     print("ACCESS DENIED")
