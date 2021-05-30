@@ -171,7 +171,25 @@ def main():
       print(f"New Credentials: username - {u_name} , password - {u_password} created")
       print ('\n')
 
-    elif short_code == 'dc':
+    
+    #Login code
+    if short_code == 'login':
+      print("Welcome to login Interface")
+      print("Enter your username")
+      input_user_name = input()
+
+      print("Enter your password")
+      input_user_password = input()
+
+      if input_user_name != u_name or input_user_password != u_password:
+        print("ACCESS DENIED!!")
+        print("Invalid username or password!!!!")
+        print("Try again")
+      else:
+        print("ACCESS GRANTED!!")
+        print("Welcome.")
+
+    elif short_code == 'display-u':
 
       if display_users():
         print("Here is a list of all your users")
@@ -186,7 +204,7 @@ def main():
         print("You dont seem to have any users saved yet")
         print('\n')
 
-    elif short_code == 'fc':
+    elif short_code == 'find-u':
       print("Enter the number you want to search for")
 
       search_number = input()
@@ -201,7 +219,7 @@ def main():
         print("That user does not exist")
 
 
-    elif short_code == 'dl':
+    elif short_code == 'delete-u':
 
       print("Enter the number you want to delete")
 
@@ -215,7 +233,7 @@ def main():
       else:
         print("That user does not exist")
 
-    elif short_code == 'cp':
+    elif short_code == 'copy-email':
 
       print("Enter the number you want to copy email from")
 
