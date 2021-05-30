@@ -15,3 +15,9 @@ def setUp(self):
   Set up method to run before each test cases in User
   '''
   self.new_user = User("Nicholas","Ngetich","NgetichNick","0725470732","ngetichnicholas903@gmail.com") #creating user object
+
+def tearDown(self):
+  '''
+  tearDown method that does clean up after each test case has run.
+  '''
+  User.user_list = []
