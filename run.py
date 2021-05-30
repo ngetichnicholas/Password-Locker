@@ -187,7 +187,8 @@ def main():
         print("Try again")
       else:
         print("ACCESS GRANTED!!")
-        print("Welcome.")
+        print(f"Welcome {u_name} to your account")
+        print("Use the following command to do some action with your account: \n find-u - command to search for your user details \n delete-u - command to delete user details \n copy-e - command to copy email address \n display-c - command to display credentials \n delete-c - command to delete credentials \n find-c - command to search credentials")
 
     elif short_code == 'display-u':
 
