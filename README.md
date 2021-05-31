@@ -2,7 +2,7 @@
 ## Author
 Nicholas Ngetich
 ## Description
-An amazing python application that will help us manage our passwords and even generate new passwords for us.
+An amazing python application that will help us manage our passwords and even generate new passwords for us. The users can create account with their details, a login username and password.
 ### Unittest
 ![alt text](https://github.com/ngetichnicholas/Password-Locker/blob/main/images/unittest.png)
 ### Creating new user account with user inputing password
@@ -23,7 +23,25 @@ You can install it with the following command in your terminal
 To access this project on your local files, you can clone it using these steps
 1. Open your terminal
 1. Use this command to clone $ git clone https://github.com/ngetichnicholas/Password-Locker.git
-1. This will clone the repositoty into your local folder
+1. This will clone the repositoty into your local folder. Then cd Password-Locker
+1. Run the command python3.6 run.py in the terminal
+1. List of command options given, chose what to do...
+   - create: command to create new account with user choosing own password
+   - create-auto: command to create account with auto generated password
+   - exit: command to quit the program
+1. Create user account,proceed to login and list of other command is given. Chose what to do...
+   - display-u: command to display user details
+   - find-u: command to search for user
+   - copy-e: command to copy email address
+   - delete-u: command to delete user
+   - display-c: command to display credentials
+   - find-c: command to search credentials
+   - copy-pwd: command to copy password
+   - delete-c: command to delete credentials
+
+
+1. This will clone the repositoty into your local folder.
+
 ## Behaviour Driven Development
 1. Provides command options to run when run.py is executed 
    - INPUT: Python3.6 run.py command entered in terminal
