@@ -96,7 +96,7 @@ def display_credentials():
 
 def main():
   print("Hello, Welcome to your password locker account \n")
-  print("Enter command to chose what to do: \n create - command to create new account with user choosing own password  \n create-auto - command to create account with auto generated password \n exit - command to exit the program \n")
+  print("Enter command to chose what to do: \n create - command to create new account choosing your own password  \n create-auto - command to create account with auto generated password \n exit - command to exit the program \n")
 
   while True:
     short_code = input().lower()
@@ -124,7 +124,6 @@ def main():
       e_address = input()
       print("-"*10)
       print("-"*60)
-
 
       save_user(create_user(f_name,l_name,p_number,e_address)) # create and save new user.
       print(f"New user {f_name} {l_name} created")
@@ -322,7 +321,6 @@ def main():
 
       else:
         print("That user does not exist")
-
 
     elif short_code == "exit":
       print("Bye .......")

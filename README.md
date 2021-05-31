@@ -12,9 +12,9 @@ To access this project on your local files, you can clone it using these steps
 1. Open your terminal
 1. Use this command to clone $ git clone https://github.com/ngetichnicholas/Password-Locker.git
 1. This will clone the repositoty into your local folder. Then cd Password-Locker
-1. Run the command python3.6 run.py in the terminal
+1. Run the command python3 run.py in the terminal
 1. List of command options given, chose what to do...
-   - create: command to create new account with user choosing own password
+   - create: command to create new account choosing your own password
    - create-auto: command to create account with auto generated password
    - exit: command to quit the program
 1. Create user account,proceed to login and list of other command is given. Chose what to do...
